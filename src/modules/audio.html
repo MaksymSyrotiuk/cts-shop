@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Music</title>
+  <style>
+   .iframe-body {
+    height: 1px;
+    width:  1px;
+      position: absolute;
+      margin-top: 100px;
+      overflow: hidden;
+      width: 80%;
+    }
+
+    button {
+      background-color: #5C0674;
+      border: 0;
+      color: #fff600;
+      border-radius: 5px;
+      font-size: 1.2em;
+      overflow: hidden;
+    }
+
+    button:hover {
+      cursor: pointer;
+      background-color: #660680;
+    }
+  </style>
+</head>
+<body class = "iframe-body">
+  <audio loop controls style="display: none;"></audio>
+  <button id="playButton">♫</button>
+
+  <script>
+    const audio = document.querySelector('audio');
+    const playButton = document.getElementById('playButton');
+    let isPlaying = false; // Flag to track playback state
+
+    // Load audio file after getting the reference to audio
+    audio.src = "../media/Cb.mp3";
+    audio.type = "audio/mpeg";
+
+    playButton.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        playButton.textContent = "♫"; // Change button text
+      } else {
+        audio.play().catch(error => {
+          console.error("Playback error:", error);
+        });
+        audio.volume = 0.2;
+        playButton.textContent = "▶"; // Change button text
+      }
+      isPlaying = !isPlaying; // Toggle the flag
+    });
+  </script>
+</body>
+</html>
