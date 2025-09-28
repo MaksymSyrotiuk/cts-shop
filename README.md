@@ -20,6 +20,7 @@ CTS/
 │   ├── index.php       # Main entry point
 │   ├── style/          # Stylesheets
 │   ├── script/         # Client-side scripts
+│   ├── ionicons/       # Icon pack
 │   ├── media/          # Images, icons, etc.
     └── ...             # Other PHP(html) files
 │
